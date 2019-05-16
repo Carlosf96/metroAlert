@@ -5,11 +5,11 @@ class Landing extends Component {
     return (
       <div style={{ height: '75vh'}} className='container valign-wrapper'>
         <div className='row'>
-          <div className='col s12 center-align'>
-            <h4>
-              <b>metroAlert</b>
-              <br/>
+          <div className='col s12 center-align App-header orange-text'>
+            <h4 style={{fontFamily: 'Pacifico', fontSize: '42pt'}}>
+              <b >metroAlert</b>
             </h4>
+              <br/>
             <p className='flow-text grey-text text-darken-1'>
               Never Miss Your Stop Again!
             </p>
@@ -21,7 +21,7 @@ class Landing extends Component {
                 borderRadius: '3px',
                 letterSpacing: '1.5px'
               }}
-              className='btn btn-large waves-effect waves-light hoverable grey accent-3'>
+              className='btn btn-large waves-effect waves-light hoverable orange accent-3'>
               Register
             </Link>
             <Link to='/login'
@@ -29,9 +29,10 @@ class Landing extends Component {
                 
                 width: '150px',
                 borderRadius: '3px',
-                letterSpacing: '1.5px'
+                letterSpacing: '1.5px',
+                marginLeft: '150px'
               }}
-              className='btn btn-large waves-effect waves-light hoverable grey accent-3'>
+              className='btn btn-large waves-effect waves-light hoverable orange accent-3'>
               Login
             </Link>
           </div>

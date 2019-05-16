@@ -95,11 +95,11 @@ class Register extends Component {
                 id='email'
                 type='email'
                 className={classnames('',{
-                  invalid: errors.password
+                  invalid: errors.email
                 })}
                 />
                 <label htmlFor='email'>Email</label>
-                <span className='red-text'>{errors.password}</span>
+                <span className='red-text'>{errors.email}</span>
             </div> 
             <div className='input-field col s12'>
               <input
@@ -138,7 +138,7 @@ class Register extends Component {
                   marginTop: '1rem'
                 }}
                 type='submit'
-                className='btn btn-large waves-effect waves-light hoverable grey accent-3'>
+                className='btn btn-large waves-effect waves-light hoverable orange accent-3'>
                   Sign up
                 </button>
             </div>

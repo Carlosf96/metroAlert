@@ -13,9 +13,9 @@ class Navbar extends Component {
               style={{
                 fontFamily: 'monospace'
               }}
-              className='col s5 brand-logo black-text left'>
-              <i className='material-icons'>code</i>{/*airbnb style guide says always self close tags that dont have children*/}
-                metroAlert 
+              className='col s5 brand-logo center orange-text'>
+              <i className='material-icons black-text'>alarm</i>{/*airbnb style guide says always self close tags that dont have children*/}
+                metroAlert
               </Link>
           </div>
         </nav> 

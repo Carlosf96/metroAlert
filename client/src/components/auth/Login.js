@@ -111,7 +111,7 @@ if (nextProps.errors) {
                       marginTop: '1rem'
                   }}
                   type='submit'
-                  className='btn btn-large waves-effect waves-light hoverable grey accent-3'
+                  className='btn btn-large waves-effect waves-light hoverable orange accent-3'
                   >Login
                   </button>
                 </div>

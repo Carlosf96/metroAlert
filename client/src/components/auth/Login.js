@@ -86,7 +86,7 @@ if (nextProps.errors) {
                   {errors.emailnotfound}
                 </span>
                 </div>
-                <div className='input-feild col s12'>
+                <div className='input-field col s12'>
                   <input
                     onChange={this.onChange}
                     value={this.state.password}
@@ -111,7 +111,7 @@ if (nextProps.errors) {
                       marginTop: '1rem'
                   }}
                   type='submit'
-                  className='btn btn-large waves-effect waves-light hoverable blue accent-4'
+                  className='btn btn-large waves-effect waves-light hoverable grey accent-3'
                   >Login
                   </button>
                 </div>

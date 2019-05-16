@@ -1,6 +1,7 @@
-# Minimum Viable Product Demo APP
+# metroAlert
 
-A basic log in and authentication web app.
+Have you ever fell asleep on the metro and missed your stop?
+Well I have a solution for you, with the metroAlert app you will be able to set alarms to wake you once you've reached your destination, you will also be able to log your trips and also share your live trip for security reasons.
 
 ## Installation
 
@@ -12,6 +13,7 @@ inside of repo do the following commands
 
 ```bash
 npm install && npm run client-install
+npm run dev
 ```
 ## Built With
 

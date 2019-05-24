@@ -4,7 +4,8 @@
   "description": "A simple MVP auth login app",
   "main": "server.js",
   "engines": {
-    "node":"10.15.3"},
+    "node": "10.15.3"
+  },
   "dependencies": {
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.18.3",
@@ -18,6 +19,7 @@
     "mongoose": "^5.4.21",
     "passport": "^0.4.0",
     "passport-jwt": "^4.0.0",
+    "react-google-maps": "^9.4.5",
     "validator": "^10.11.0",
     "winston": "^3.2.1"
   },
@@ -39,7 +41,8 @@
     "server": "nodemon server.js",
     "client": "npm start --prefix client",
     "dev": "concurrently \"npm run server\" \"npm run client\"",
-    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client"
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client",
+    "start-sw": "http-server ./build"
   },
   "keywords": [
     "React",

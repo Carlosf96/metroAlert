@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { logoutUser } from "../../actions/authActions";
-
+import MyMapComponent from 'C:/Users/XeX/Documents/Carlosf96/MVP/client/src/components/dashboard/map.js'
 class Dashboard extends Component {
   onLogoutClick = e => {
     e.preventDefault();
@@ -14,7 +14,11 @@ class Dashboard extends Component {
 
     return (
       <div style={{ height: "75vh" }} className="container valign-wrapper">
+        
         <div className="row">
+        <div>
+            <MyMapComponent/>
+           </div>
           <div className="col s12 center-align">
             <h4>
               <b>Hey there,</b> {user.name.split(" ")[0]}
@@ -24,6 +28,7 @@ class Dashboard extends Component {
                 👻
               </p>
             </h4>
+            
             <button
               style={{
                 width: "150px",
@@ -36,8 +41,11 @@ class Dashboard extends Component {
             >
               Logout
             </button>
+            
           </div>
+          
         </div>
+        
       </div>
     );
   }

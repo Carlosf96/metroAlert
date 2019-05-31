@@ -4,7 +4,7 @@ const router = express.Router();
 const bcrypt = require("bcryptjs"); //Needed for password hashing
 const jwt = require("jsonwebtoken");
 const keys = require("../../config/keys");
-const passport = require("passport");
+
 //load input validation
 const validateRegisterInput = require("../../validation/register");
 const validateLoginInput = require("../../validation/login");

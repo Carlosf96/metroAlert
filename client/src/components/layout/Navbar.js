@@ -1,14 +1,11 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
-import { logoutUser } from "../../actions/authActions";
 import { Link } from 'react-router-dom';
 
 
 class Navbar extends Component {
   render() {
-    const { user } = this.props.auth;
-
     return (
       <div>
         <nav className='navbar-fixed'>

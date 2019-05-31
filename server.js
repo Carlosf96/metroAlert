@@ -5,6 +5,8 @@ const bodyParser = require("body-parser");
 const passport = require("passport");
 const users = require("./routes/api/users");
 const path = require("path");
+const db = require("./config/keys").mongoURI; //require config for DB
+
 
 (async () => {
 	try {
@@ -22,7 +24,6 @@ const path = require("path");
 
 		app.use(bodyParser.json()); //parse to jason
 
-		const db = require("./config/keys").mongoURI; //require config for DB
 
 
 		//passport middleware

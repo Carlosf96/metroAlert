@@ -4,13 +4,14 @@ import {
   withScriptjs,
   withGoogleMap,
   GoogleMap,
-  Marker
+  Marker,
+  DirectionsRenderer
 } from "react-google-maps";
 
 const MyMapComponent = compose(
   withProps({
     googleMapURL:
-      "https://maps.googleapis.com/maps/api/js?key=AIzaSyCS3VuBv3CqgI6wFPcMpI1eQTK11Ktfa4g&v=3.26&libraries=geometry,drawing,places",
+      "https://maps.googleapis.com/maps/api/js?key=AIzaSyBgtqp7JWiiDLXuJUWurBipQVL4W9mcr7w&v=3.26&libraries=geometry,drawing,places&callback=initGoogleApi",
     loadingElement: <div style={{ height: `100%` }} />,
     containerElement: <div style={{ height: `400px` }} />,
     mapElement: <div style={{ height: `100%` }} />

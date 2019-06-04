@@ -13,11 +13,13 @@ class Dashboard extends Component {
     const { user } = this.props.auth;
 
     return (
-      <div style={{ height: "75vh" }} className="container valign-wrapper">
+      <div>
+        <MyMapComponent/>
+      <div style={{ height: "75vh" }} className="container ">
         
         <div className="row">
         <div>
-            <MyMapComponent/>
+            
            </div>
           <div className="col s12 center-align">
             <h4>
@@ -46,7 +48,8 @@ class Dashboard extends Component {
           
         </div>
         
-      </div>
+        </div>
+        </div>
     );
   }
 }

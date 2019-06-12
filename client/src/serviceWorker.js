@@ -21,7 +21,7 @@ const isLocalhost = Boolean(
 );
 
 export function register(config) {
-  if (process.env.NODE_ENV === 'production' && 'serviceWorker' in navigator) {
+  if ( process.env.NODE_ENV === 'production' && 'serviceWorker' in navigator) {
     // The URL constructor is available in all browsers that support SW.
     const publicUrl = new URL(process.env.PUBLIC_URL, window.location.href);
     if (publicUrl.origin !== window.location.origin) {
@@ -30,10 +30,47 @@ export function register(config) {
       // serve assets; see https://github.com/facebook/create-react-app/issues/2374
       return;
     }
+//     var deferredPrompt;
 
+//     window.addEventListener('beforeinstallprompt', (e) => {
+//       // Prevent Chrome 67 and earlier from automatically showing the prompt
+//       e.preventDefault();
+//       // Stash the event so it can be triggered later.
+//       deferredPrompt = e;
+    
+//       showAddToHomeScreen();
+    
+//     });
+//     function showAddToHomeScreen() {
+
+//       var a2hsBtn = document.querySelector(".ad2hs-prompt");
+    
+//       a2hsBtn.style.display = "block";
+    
+//       a2hsBtn.addEventListener("click", addToHomeScreen);
+    
+//     }
+
+//     function addToHomeScreen() {
+//   var a2hsBtn = document.querySelector(".ad2hs-prompt");  // hide our user interface that shows our A2HS button
+//   a2hsBtn.style.display = 'none';  // Show the prompt
+//   deferredPrompt.prompt();  // Wait for the user to respond to the prompt
+//   deferredPrompt.userChoice
+//     .then(function(choiceResult){
+
+//   if (choiceResult.outcome === 'accepted') {
+//     console.log('User accepted the A2HS prompt');
+//   } else {
+//     console.log('User dismissed the A2HS prompt');
+//   }
+
+//   deferredPrompt = null;
+
+// });}
     window.addEventListener('load', () => {
-      const swUrl = `${process.env.PUBLIC_URL}/service-worker.js`;
-
+      //const swUrl = `${process.env.PUBLIC_URL}/service-worker.js`;
+      //custom sw
+      const swUrl = `${process.env.PUBLIC_URL}/sw.js`
       if (isLocalhost) {
         // This is running on localhost. Let's check if a service worker still exists or not.
         checkValidServiceWorker(swUrl, config);

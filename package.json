@@ -13,6 +13,7 @@
     "concurrently": "^4.1.0",
     "create-react-app": "^2.1.8",
     "express": "^4.16.4",
+    "hoodie": "^28.2.7",
     "is-empty": "^1.2.0",
     "jsonwebtoken": "^8.5.1",
     "mongodb": "^3.2.2",
@@ -34,6 +35,7 @@
     "webpack-dev-middleware": "^3.6.2",
     "webpack-hot-middleware": "^2.24.3",
     "workbox-build": "^4.3.1",
+    "workbox-cli": "^4.3.1",
     "ws": "3.3.2"
   },
   "scripts": {
@@ -43,7 +45,8 @@
     "client": "npm start --prefix client",
     "dev": "concurrently \"npm run server\" \"npm run client\"",
     "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client",
-    "start-sw": "http-server ./build"
+    "start-sw": "http-server ./build",
+    "start-hoodie": "hoodie"
   },
   "keywords": [
     "React",

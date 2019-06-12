@@ -5,8 +5,10 @@
   "dependencies": {
     "axios": "^0.18.0",
     "classnames": "^2.2.6",
+    "hoodie": "^28.2.7",
     "jwt-decode": "^2.2.0",
     "materialize-css": "^1.0.0-rc.2",
+    "pouchdb-browser": "^7.0.0",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-google-maps": "^9.4.5",
@@ -22,7 +24,8 @@
     "clean-cra-sw": "rm -f build/precache-manifest.*.js && rm -f build/service-worker.js",
     "build": "react-scripts build && npm run build-sw && npm run clean-cra-sw",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "start-hoodie": "hoodie"
   },
   "proxy": "http://localhost:5000",
   "eslintConfig": {

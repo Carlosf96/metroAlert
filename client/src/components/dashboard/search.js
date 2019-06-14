@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 
-export default class search extends Component {
+export default class Search extends Component {
   constructor(props) {
     super(props)
     this.state = {
@@ -12,7 +12,7 @@ export default class search extends Component {
   render() {
     return (
       <div>
-        
+        <input type='text' placeholder='Destination'></input>
       </div>
     )
   }

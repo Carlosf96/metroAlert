@@ -1,13 +1,13 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
-import { Link } from "react-router-dom";
+//import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import { logoutUser } from "../../actions/authActions";
 import MyMapComponent from './map';
 import Search from './Search';
-import MyTrips from './MyTrips';
+//import MyTrips from './MyTrips';
 
-class Dashboard extends Component {
+class MapDash extends Component {
   onLogoutClick = e => {
     e.preventDefault();
     this.props.logoutUser();
@@ -18,8 +18,7 @@ class Dashboard extends Component {
 
     return (
       <div>
-        
-      <div style={{ height: "150vh" }} className="container ">
+      <div style={{ height: "80vh" }} className="container ">
         
         <div className="row">
         <div>
@@ -27,23 +26,11 @@ class Dashboard extends Component {
            </div>
           <div className="col s12 center-align">
             <h4>
-                <b>Hey there,</b> {user.name.split(" ")[0]}
-                <MyTrips/>
-              <p className="flow-text grey-text text-darken-4">
-                You are now logged into a FullStack{" "}
-                <span style={{ fontFamily: "monospace" }}>MERN</span> apperino
-                👻
-              </p>
+                <b>Hey there,</b> {user.name.split(" ")[0]} ðŸ‘»
+                <Search/>
+                <MyMapComponent />
             </h4>
-            <Link style={{
-                width: "150px",
-                borderRadius: "3px",
-                letterSpacing: "1.5px",
-                marginTop: "1rem"
-              }}
-                to="./map.js"
-                className="btn btn-large waves-effect waves-light hoverable orange accent-3"
-                >Go to Map</Link>
+            
             <button
               style={{
                 width: "150px",
@@ -60,16 +47,14 @@ class Dashboard extends Component {
           </div>
           
         </div>
-        <MyMapComponent />
         
-        <Search/>
         </div>
         </div>
     );
   }
 }
 
-Dashboard.propTypes = {
+MapDash.propTypes = {
   logoutUser: PropTypes.func.isRequired,
   auth: PropTypes.object.isRequired
 };
@@ -79,4 +64,4 @@ const mapStateToProps = state => ({
 export default connect(
   mapStateToProps,
   { logoutUser }
-)(Dashboard);
+)(MapDash);

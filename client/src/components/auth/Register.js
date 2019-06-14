@@ -53,8 +53,7 @@ class Register extends Component {
   render() {
     const { errors } = this.state; //destruct state for easier access to our errors
     return (
-      <div className="container"
-     >
+      <div className="container">
         <div className="row">
           <div className="col s8 offset-s2">
             <Link to="/" className="btn-flat waves-effect">

@@ -4,8 +4,7 @@ export default class MyTrips extends Component {
   render() {
     return (
       <div>
-        <h1>Welcome to the your personalized Trip Log</h1>
-        
+         <p className="flow-text orange-text text-darken-4 center">Welcome to your personalized Trip Log</p>
       </div>
     )
   }

@@ -1,3 +1,4 @@
+![logo](client/public/metroIcon.png)
 # metroAlert
 
 Have you ever fell asleep on the metro and missed your stop?

@@ -4,8 +4,6 @@ import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import { logoutUser } from "../../actions/authActions";
 import MyMapComponent from './map';
-import Search from './search';
-import MyTrips from './MyTrips';
 
 class Dashboard extends Component {
   onLogoutClick = e => {
@@ -17,18 +15,13 @@ class Dashboard extends Component {
     const { user } = this.props.auth;
 
     return (
-      <div>
-        
       <div style={{ height: "150vh" }} className="container ">
-        
         <div className="row">
         <div>
-            
            </div>
           <div className="col s12 center-align">
             <h4>
                 <b>Hey there,</b> {user.name.split(" ")[0]}
-                <MyTrips/>
               <p className="flow-text grey-text text-darken-4">
                 You are now logged into a FullStack{" "}
                 <span style={{ fontFamily: "monospace" }}>MERN</span> apperino
@@ -41,7 +34,7 @@ class Dashboard extends Component {
                 letterSpacing: "1.5px",
                 marginTop: "1rem"
               }}
-                to="./map.js"
+                to="/mapdash"
                 className="btn btn-large waves-effect waves-light hoverable orange accent-3"
                 >Go to Map</Link>
             <button
@@ -56,15 +49,9 @@ class Dashboard extends Component {
             >
               Logout
             </button>
-            
           </div>
-          
         </div>
-        <Search/>
         <MyMapComponent />
-        
-        {/* <Search/> */}
-        </div>
         </div>
     );
   }

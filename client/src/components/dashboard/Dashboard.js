@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import { logoutUser } from "../../actions/authActions";
 import MyMapComponent from './map';
-//import Search from './Search';
+import Search from './search';
 import MyTrips from './MyTrips';
 
 class Dashboard extends Component {
@@ -60,6 +60,7 @@ class Dashboard extends Component {
           </div>
           
         </div>
+        <Search/>
         <MyMapComponent />
         
         {/* <Search/> */}

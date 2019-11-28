@@ -8,7 +8,7 @@ import { Provider } from "react-redux";
 import store from "./store";
 
 //import './App.css';
-import image from "../src/components/layout/metro_BG.jpg";
+//import image from "../src/components/layout/metro_BG.jpg";
 
 import Navbar from "./components/layout/Navbar";
 import Landing from "./components/layout/Landing";
@@ -41,11 +41,7 @@ class App extends Component {
     return (
       <Provider store={store}>
         <Router>
-          <div className="App"
-           style={{
-            backgroundImage: "url(" + image + ")",
-            backgroundSize: "cover"
-          }}>
+          <div className="App">
             <Navbar />
             <Route exact path="/" component={Landing} />
             <Route exact path="/register" component={Register} />

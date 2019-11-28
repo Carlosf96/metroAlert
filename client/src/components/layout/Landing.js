@@ -1,13 +1,20 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-
+import { connect } from "react-redux";
+import PropTypes from 'prop-types';
+//import image from './metro_BG.jpg'
 class Landing extends Component {
+  componentDidMount(){
+    if(this.props.auth.isAuthenticated){
+      this.props.history.push('/dashboard')
+    }
+  }
   render() {
     return (
-      <div style={{ height: "120vh" }} className="container valign-wrapper">
+      <div style={{ height: "75vh" }} className="container valign-wrapper">
         <div className="row">
           <div className="col s12 center-align App-header orange-text">
-            <h4 style={{ fontFamily: "Pacifico", fontSize: "42pt" }}>
+            <h4 className='flow-text' style={{ fontFamily: "Pacifico", fontSize: "42pt" }}>
               <b>metroAlert</b>
             </h4>
             <br />
@@ -15,29 +22,32 @@ class Landing extends Component {
               Never Miss Your Stop Again!
             </p>
             <br />
-            <Link
-              to="/register"
-              style={{
-                width: "150px",
-                borderRadius: "3px",
-                letterSpacing: "1.5px"
-              }}
-              className="btn btn-large waves-effect waves-light hoverable orange accent-3"
-            >
-              Register
-            </Link>
-            <Link
-              to="/login"
-              style={{
-                width: "150px",
-                borderRadius: "3px",
-                letterSpacing: "1.5px",
-                marginLeft: "150px"
-              }}
-              className="btn btn-large waves-effect waves-light hoverable orange accent-3"
-            >
-              Login
-            </Link>
+            <div className="col s12 m6">
+              <Link
+                to="/register"
+                style={{
+                  width: "150px",
+                  borderRadius: "3px",
+                  letterSpacing: "1.5px"
+                }}
+                className="btn btn-large waves-effect waves-light hoverable orange accent-3 z-depth-2"
+              >
+                Register
+              </Link>
+              </div>
+              <div className="col s12 m6">
+              <Link
+                to="/login"
+                style={{
+                  width: "150px",
+                  borderRadius: "3px",
+                  letterSpacing: "1.5px",
+                }}
+                className="btn btn-large waves-effect waves-light hoverable orange accent-3 z-depth-2"
+                >
+                Login
+              </Link>
+              </div>
           </div>
         </div>
       </div>
@@ -45,4 +55,13 @@ class Landing extends Component {
   }
 }
 
-export default Landing;
+
+Landing.propTypes = {
+  auth: PropTypes.object.isRequired
+};
+
+const mapStateToProps = state => ({
+  auth: state.auth
+});
+
+export default connect(mapStateToProps)(Landing);

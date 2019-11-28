@@ -24,7 +24,7 @@ module.exports = {
         email: req.body.email,
         password: req.body.password
       });
-      //hash pass before storing in db
+      // Hash pass before storing in db
       bcrypt.genSalt(10, (err, salt) => {
         bcrypt.hash(newUser.password, salt, (err, hash) => {
           if (err) throw err;
@@ -38,42 +38,36 @@ module.exports = {
     });
   },
   login: (req, res) => {
-    //form validation
     const { errors, isValid } = validateLoginInput(req.body);
-    //check validation
     if (!isValid) {
       return res.status(400).json(errors);
     }
     const email = req.body.email;
     const password = req.body.password;
-    //find user by email
+    // Find user by email
     User.findOne({
       email
     }).then(user => {
-      //check if user exists
+      // Check if user exists
       if (!user) {
         return res.status(404).json({
           emailNotFound: "Email not found"
         });
       }
-  
-      //check pass
       bcrypt.compare(password, user.password).then(isMatch => {
         if (isMatch) {
-          //check if match
-          //User Matched
-          console.log("User has matched");
-          //create JWT payload
+          console.log("password has matched");
+          // Create JWT payload
           const payload = {
             id: user.id,
             name: user.name
           };
-          //sign token
+          // Sign token
           jwt.sign(
             payload,
             keys.secretOrKey,
             {
-              expiresIn: 15780000 //6 months in seconds
+              expiresIn: 15780000 // 6 months in seconds
             },
             (err, token) => {
               res.json({

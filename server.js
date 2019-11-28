@@ -1,4 +1,3 @@
-//find and use technologies we will use.
 const express = require("express");
 const mongoose = require("mongoose");
 const bodyParser = require("body-parser");

@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import { logoutUser } from "../../actions/authActions";
-import MyMapComponent from './map';
+// import MyMapComponent from './map';
 
 class Dashboard extends Component {
   onLogoutClick = e => {
@@ -51,7 +51,7 @@ class Dashboard extends Component {
             </button>
           </div>
         </div>
-        <MyMapComponent />
+        {/* <MyMapComponent /> */}
         </div>
     );
   }

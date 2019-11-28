@@ -16,18 +16,16 @@ class Login extends Component {
     this.onChange = this.onChange.bind(this);
     this.onSubmit = this.onSubmit.bind(this);
   }
-  componentWillReceiveProps(nextProps) {
+  static getDerivedStateFromProps(nextProps, prevState) {
     if (nextProps.auth.isAuthenticated) {
-      this.props.history.push("/dashboard"); // push user to dashboard when they login
+      nextProps.history.push("/dashboard");
     }
     if (nextProps.errors) {
-      this.setState({
-        errors: nextProps.errors
-      });
+      return { errors: nextProps.errors };
     }
+    else return null;
   }
   componentDidMount() {
-    //if logged in and user navs to register page, should redir to dashboard
     if (this.props.auth.isAuthenticated) {
       this.props.history.push("/dashboard");
     }
@@ -37,7 +35,6 @@ class Login extends Component {
   }
   onSubmit(e) {
     e.preventDefault();
-
     const userData = {
       email: this.state.email,
       password: this.state.password
@@ -131,7 +128,4 @@ const mapStateToProps = state => ({
   auth: state.auth,
   errors: state.errors
 });
-export default connect(
-  mapStateToProps,
-  { loginUser }
-)(Login);
+export default connect(mapStateToProps, { loginUser })(Login);

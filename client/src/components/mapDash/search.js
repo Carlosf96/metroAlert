@@ -4,10 +4,22 @@ export default class Search extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      lat: 0,
-      lng: 0,
-      travelmode: ''
+      origin: '',
+      destination: '',
     }
+    this.onChange = this.onChange.bind(this);
+    this.onSubmit = this.onSubmit.bind(this);
+  }
+  onChange(e) {
+    this.setState({ [e.target.id]: e.target.value });
+  }
+  onSubmit(e) {
+    e.preventDefault();
+    const tripDetails = {
+      origin: this.state.origin,
+      destination: this.state.destination,
+    };
+    // commenceTrip(tripDetails);
   }
   render() {
     return (

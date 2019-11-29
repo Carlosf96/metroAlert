@@ -2,16 +2,17 @@ const User = require("../models/User");
 const validateRegisterInput = require("../validation/register");
 const validateLoginInput = require("../validation/login");
 const keys = require("../config/keys");
-const bcrypt = require("bcryptjs"); 
+const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 module.exports = {
   register: (req, res) => {
-    const { errors, isValid } = validateRegisterInput(req.body);
+    const {body, body: { name, email, password}} = req;
+    const { errors, isValid } = validateRegisterInput(body);
     if (!isValid) {
       return res.status(400).json(errors);
     }
     User.findOne({
-      email: req.body.email
+      email: email
     }).then(user => {
       if (user) {
         console.log("email exists");
@@ -20,11 +21,10 @@ module.exports = {
         });
       }
       const newUser = new User({
-        name: req.body.name,
-        email: req.body.email,
-        password: req.body.password
+        name: name,
+        email: email,
+        password: password
       });
-      // Hash pass before storing in db
       bcrypt.genSalt(10, (err, salt) => {
         bcrypt.hash(newUser.password, salt, (err, hash) => {
           if (err) throw err;
@@ -38,17 +38,14 @@ module.exports = {
     });
   },
   login: (req, res) => {
-    const { errors, isValid } = validateLoginInput(req.body);
+    const {body, body: { email, password}} = req;
+    const { errors, isValid } = validateLoginInput(body);
     if (!isValid) {
       return res.status(400).json(errors);
     }
-    const email = req.body.email;
-    const password = req.body.password;
-    // Find user by email
     User.findOne({
       email
     }).then(user => {
-      // Check if user exists
       if (!user) {
         return res.status(404).json({
           emailNotFound: "Email not found"
@@ -57,12 +54,10 @@ module.exports = {
       bcrypt.compare(password, user.password).then(isMatch => {
         if (isMatch) {
           console.log("password has matched");
-          // Create JWT payload
           const payload = {
             id: user.id,
             name: user.name
           };
-          // Sign token
           jwt.sign(
             payload,
             keys.secretOrKey,
@@ -83,5 +78,5 @@ module.exports = {
         }
       });
     });
-  },
-}
+  }
+};
